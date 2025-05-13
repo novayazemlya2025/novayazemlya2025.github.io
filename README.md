@@ -1,0 +1,1 @@
+# novayazemlya2025.github.io
