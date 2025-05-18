@@ -4,92 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Гайд «Женщина нового времени»</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="icon" href="logo.png" type="image/png" />
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('background.jpg');
+      background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
       color: #333;
     }
     .overlay {
-      background-color: rgba(255, 255, 255, 0.95);
-      max-width: 880px;
+      background-color: rgba(255, 255, 255, 0.92);
+      max-width: 800px;
       margin: 40px auto;
       padding: 40px 30px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
     }
     h1 {
-      font-size: 2.4em;
-      margin-bottom: 20px;
+      font-size: 2.2em;
+      margin-bottom: 15px;
       text-align: center;
     }
     h2 {
-      margin-top: 50px;
-      font-size: 1.8em;
+      margin-top: 40px;
+      font-size: 1.6em;
     }
     p {
       font-size: 1.1em;
       line-height: 1.6;
-      margin-bottom: 20px;
     }
     .cover {
+      display: block;
+      margin: 30px auto;
+      max-width: 350px;
       width: 100%;
-      height: auto;
       border-radius: 10px;
-      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     .author-section {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 20px;
-      align-items: flex-start;
-      margin-top: 30px;
+      margin-top: 40px;
+      flex-wrap: wrap;
     }
     .author-photo {
-      max-width: 280px;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     .author-text {
       flex: 1;
-      font-size: 1.1em;
-      line-height: 1.6;
     }
     .gallery {
       display: flex;
       gap: 12px;
-      margin-top: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
     }
     .gallery img {
-      width: 50%;
+      width: calc(50% - 6px);
       border-radius: 10px;
       object-fit: cover;
     }
-    .telegram-button {
+    .button {
       display: block;
-      width: fit-content;
-      margin: 50px auto 0 auto;
-      padding: 14px 28px;
-      background-color: #0088cc;
-      color: white;
-      font-weight: bold;
-      font-size: 1.2em;
       text-align: center;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,136,204,0.4);
+      margin: 40px auto 20px auto;
     }
-    .telegram-button:hover {
-      background-color: #006b99;
+    .button a {
+      background-color: #2a5db0;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-size: 1.1em;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .button a:hover {
+      background-color: #1d4585;
     }
     footer {
-      margin-top: 60px;
+      margin-top: 50px;
       font-size: 0.9em;
       color: #555;
       text-align: center;
@@ -105,25 +104,35 @@
 </head>
 <body>
   <div class="overlay">
-    <img src="cover.jpg" alt="Обложка гайда" class="cover" />
-
     <h1>Гайд «Женщина нового времени. Искусство осознанных отношений»</h1>
 
     <p>
       Этот гайд — результат моих глубоких размышлений и опирается на широкий круг исследований в таких дисциплинах, как психология, социология, антропология и эволюционная биология. Он создан для женщин, которые стремятся к зрелым, гармоничным и осознанным отношениям.
     </p>
+
+    <div>
+      <img src="cover.jpg" alt="Обложка гайда" class="cover" />
+    </div>
+
     <p>
       Я не претендую на истину в последней инстанции, но надеюсь, что мои мысли и наблюдения будут полезны тем, кто ищет свой путь, хочет выйти из иллюзий и перестроить свою реальность. В гайде — размышления, практики, вопросы для самопознания и осознанного выбора.
     </p>
+
     <p>
       После оплаты вы получите PDF-файл (25 страниц) с полным содержанием прямо в Telegram-боте.
     </p>
 
+    <div class="button">
+      <a href="https://t.me/NewTimeWomanBot" target="_blank">Получить гайд в Telegram</a>
+    </div>
+
     <h2>Автор</h2>
     <div class="author-section">
-      <img src="autor.jpg" alt="Фото автора Катерины Пенцовой" class="author-photo" />
+      <img src="autor.jpg" alt="Катерина Пьєнцова" class="author-photo" />
       <div class="author-text">
-        Меня зовут Катерина Пенцова. Я исследую женскую природу, свободу и психологическую зрелость, веду женские круги, арт-встречи и развивающие игры. Этот проект — часть моей миссии: помочь женщинам вернуться к себе.
+        <p>
+          Меня зовут Катерина Пьєнцова. Я исследую женскую природу, свободу и психологическую зрелость, веду женские круги, арт-встречи и развивающие игры. Этот проект — часть моей миссии: помочь женщинам вернуться к себе.
+        </p>
       </div>
     </div>
 
@@ -131,15 +140,6 @@
       <img src="cozy1.jpg" alt="Атмосферное фото 1" />
       <img src="cozy2.jpg" alt="Атмосферное фото 2" />
     </div>
-
-    <a
-      href="https://t.me/NewTimeWomanBot"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="telegram-button"
-    >
-      Купить гайд в Telegram
-    </a>
 
     <footer>
       Контакт: <a href="mailto:katerynapientsova@gmail.com">katerynapientsova@gmail.com</a><br />
