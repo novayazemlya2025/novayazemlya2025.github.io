@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #fdfdfb;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  margin-bottom: 0.5em;
+}
+
+p, ul {
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+a {
+  color: #3b5c4b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2em;
+}
+
+.hero {
+  background: url("cover.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 3em;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.project-name {
+  font-size: 48px;
+  margin-bottom: 0.2em;
+}
+
+.tagline {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 1em;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #3b5c4b;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #2e4a3a;
+}
+
+.section {
+  padding: 3em 1em;
+}
+
+.section.light {
+  background-color: #f7f7f7;
+}
+
+.section.guide ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.section.guide ul li::before {
+  content: "•";
+  color: #3b5c4b;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.author-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2em;
+}
+
+.author-photo {
+  max-width: 200px;
+  border-radius: 12px;
+}
+
+.footer {
+  background-color: #3b5c4b;
+  color: white;
+  text-align: center;
+  padding: 2em 1em;
+}
+
+.footer a {
+  color: #fff9dc;
+  margin: 0 0.5em;
+}
