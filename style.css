@@ -1,0 +1,75 @@
+
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #f9f6ef;
+    color: #333;
+}
+
+.hero {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(249, 246, 239, 0.9);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.cta-button {
+    background-color: #5e724f;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #4e6141;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px 10%;
+    gap: 60px;
+    background-color: #fdfaf3;
+}
+
+.left-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.right-column {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.author-photo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-me p {
+    margin-bottom: 1.5em;
+}
