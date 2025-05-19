@@ -2,150 +2,136 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Гайд «Женщина нового времени»</title>
-  <link rel="icon" href="logo.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Новая Земля</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f6f3;
+      color: #2e2e2e;
     }
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.92);
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    }
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    h2 {
-      margin-top: 40px;
-      font-size: 1.6em;
-    }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    .cover {
-      display: block;
-      margin: 30px auto;
-      max-width: 350px;
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .author-section {
+
+    header {
+      background: url('cover.jpg') center/cover no-repeat;
+      height: 100vh;
       display: flex;
       align-items: center;
-      gap: 20px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .author-photo {
-      width: 150px;
-      height: 150px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .author-text {
-      flex: 1;
-    }
-    .gallery {
-      display: flex;
-      gap: 12px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    .gallery img {
-      width: calc(50% - 6px);
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    .button {
-      display: block;
+      justify-content: center;
+      flex-direction: column;
       text-align: center;
-      margin: 40px auto 20px auto;
-    }
-    .button a {
-      background-color: #2a5db0;
       color: white;
-      padding: 14px 28px;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    .section {
+      padding: 4rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 2rem;
+      background-color: #3c6e47;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 30px;
       text-decoration: none;
-      font-size: 1.1em;
-      border-radius: 8px;
-      transition: background 0.3s;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease;
     }
-    .button a:hover {
-      background-color: #1d4585;
+
+    .buy-button:hover {
+      background-color: #305b3b;
     }
+
     footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #555;
+      background-color: #e8e5df;
+      padding: 2rem;
       text-align: center;
+      font-size: 0.9rem;
     }
-    a {
-      color: #2a5db0;
-      text-decoration: none;
+
+    .author {
+      text-align: center;
+      margin-top: 2rem;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .author img {
+      max-width: 130px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Гайд «Женщина нового времени. Искусство осознанных отношений»</h1>
 
-    <p>
-      Этот гайд — результат моих глубоких размышлений и опирается на широкий круг исследований в таких дисциплинах, как психология, социология, антропология и эволюционная биология. Он создан для женщин, которые стремятся к зрелым, гармоничным и осознанным отношениям.
-    </p>
+<header>
+  <h1>Новая Земля</h1>
+  <p>Проект о глубине, зрелости и внутренней свободе. Для тех, кто чувствует перемены и хочет идти в ногу с ними.</p>
+</header>
 
-    <div>
-      <img src="cover.jpg" alt="Обложка гайда" class="cover" />
-    </div>
+<section class="section">
+  <h2>О проекте «Новая Земля»</h2>
+  <p>
+    «Новая Земля» — это пространство, где рождаются новые смыслы. Это проект о глубине, зрелости и свободе — внутренней и внешней.
+    Здесь мы отказываемся от шаблонов, проживаем осознанность и учимся выстраивать отношения с собой, людьми и жизнью на других принципах — честности, равноправии и внутренней опоре.
+    Мы объединяем тех, кто чувствует перемены и хочет идти в ногу с ними — с ясностью, достоинством и открытым сердцем.
+  </p>
+</section>
 
-    <p>
-      Я не претендую на истину в последней инстанции, но надеюсь, что мои мысли и наблюдения будут полезны тем, кто ищет свой путь, хочет выйти из иллюзий и перестроить свою реальность. В гайде — размышления, практики, вопросы для самопознания и осознанного выбора.
-    </p>
+<section class="section">
+  <h2>О гайде “Женщина нового времени”</h2>
+  <p>
+    Этот гайд — часть проекта «Новая Земля». Он создан для женщин, которые готовы отпустить иллюзии, выйти за пределы ролей и перейти к зрелым отношениям.
+  </p>
+  <ul>
+    <li>Практики самопознания и развития</li>
+    <li>Глубокие размышления о личностном росте и женской силе</li>
+    <li>Конкретные инструменты и шаги для построения честных и поддерживающих отношений</li>
+    <li>Ссылки на исследования, книги и научные источники</li>
+  </ul>
+  <p>Это не просто текст. Это приглашение к внутреннему переходу.</p>
+  <a class="buy-button" href="https://t.me/leelaguide_bot" target="_blank">Купить в Telegram</a>
+</section>
 
-    <p>
-      После оплаты вы получите PDF-файл (25 страниц) с полным содержанием прямо в Telegram-боте.
-    </p>
+<section class="section author">
+  <img src="autor.jpg" alt="Автор" />
+  <p>
+    Привет! Меня зовут Катя. Я — проводник в мир внутренней трансформации и создательница проекта «Новая Земля».
+    Этот гайд — результат моих размышлений и исследований, объединяющий психологию, социологию, антропологию и биологию.
+  </p>
+</section>
 
-    <div class="button">
-      <a href="https://t.me/NewTimeWomanBot" target="_blank">Получить гайд в Telegram</a>
-    </div>
+<footer>
+  <p>© 2025 Новая Земля. Все права защищены. Не распространяйте гайд без согласия автора.</p>
+  <p>Политика конфиденциальности | Контакты: katerynapientsova@gmail.com</p>
+</footer>
 
-    <h2>Автор</h2>
-    <div class="author-section">
-      <img src="autor.jpg" alt="Катерина Пьєнцова" class="author-photo" />
-      <div class="author-text">
-        <p>
-          Меня зовут Катерина Пьєнцова. Я исследую женскую природу, свободу и психологическую зрелость, веду женские круги, арт-встречи и развивающие игры. Этот проект — часть моей миссии: помочь женщинам вернуться к себе.
-        </p>
-      </div>
-    </div>
-
-    <div class="gallery">
-      <img src="cozy1.jpg" alt="Атмосферное фото 1" />
-      <img src="cozy2.jpg" alt="Атмосферное фото 2" />
-    </div>
-
-    <footer>
-      Контакт: <a href="mailto:katerynapientsova@gmail.com">katerynapientsova@gmail.com</a><br />
-      Telegram: <a href="https://t.me/leelaguide" target="_blank">@leelaguide</a><br />
-      © 2025 Новая Земля
-    </footer>
-  </div>
 </body>
 </html>
