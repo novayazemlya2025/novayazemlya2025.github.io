@@ -21,6 +21,53 @@
   max-height: 300px; /* Ограничиваем максимальную высоту баннера */
   object-fit: cover; /* Чтобы изображение красиво масштабировалось */
 }
+
+    .slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider img {
+  width: 100vw;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  font-size: 2em;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+/* Для компьютеров – по 2 фото */
+@media (min-width: 768px) {
+  .slider img {
+    width: 50vw;
+  }
+
     .button {
       background-color: #808068;
       color: white;
@@ -89,57 +136,6 @@
   <button class="arrow right" onclick="slideRight()">❯</button>
 </div>
   </header>
-
-  .slider-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.slider {
-  display: flex;
-  transition: transform 0.4s ease;
-}
-
-/* Стили для самих слайдов */
-.slider img {
-  width: 100vw;
-  height: auto;
-  flex-shrink: 0;
-}
-
-/* На больших экранах — показать сразу несколько слайдов */
-@media (min-width: 769px) {
-  .slider img {
-    width: 33.33vw; /* Три слайда видны одновременно */
-  }
-}
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
-  font-size: 2em;
-  padding: 0.3em 0.5em;
-  cursor: pointer;
-  z-index: 2;
-  transition: background 0.3s;
-}
-
-.arrow:hover {
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.arrow.left {
-  left: 10px;
-}
-
-.arrow.right {
-  right: 10px;
-}
 
   <section>
     <div style="text-align: center;">
