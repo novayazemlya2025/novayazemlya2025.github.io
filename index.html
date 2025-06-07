@@ -171,5 +171,41 @@
     <a href="terms.html">Условия использования</a>
   </div>
 </footer>
+  
+  <!-- Скрипт слайдера -->
+  <script>
+    let slider = document.getElementById('slider');
+    let slides = slider.children;
+    let index = 0;
+
+    function slideRight() {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    }
+
+    function slideLeft() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    function updateSlider() {
+      slider.style.transform = translateX(-${index * 100}vw);
+    }
+
+    // Swipe для мобильных
+    let startX = 0;
+
+    slider.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) slideRight();
+      if (endX - startX > 50) slideLeft();
+    });
+  </script>
+</body>
+</html>
 </body>
 </html>
