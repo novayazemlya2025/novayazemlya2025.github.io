@@ -90,6 +90,57 @@
 </div>
   </header>
 
+  .slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* Стили для самих слайдов */
+.slider img {
+  width: 100vw;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* На больших экранах — показать сразу несколько слайдов */
+@media (min-width: 769px) {
+  .slider img {
+    width: 33.33vw; /* Три слайда видны одновременно */
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  font-size: 2em;
+  padding: 0.3em 0.5em;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
   <section>
     <div style="text-align: center;">
       <a href="https://store-novayazemlya.lemonsqueezy.com/buy/6f2280b8-f84d-4f64-8805-f632da8c2876" class="button">Скачать Гайд</a>
@@ -172,39 +223,46 @@
   </div>
 </footer>
   
-  <!-- Скрипт слайдера -->
-  <script>
-    let slider = document.getElementById('slider');
-    let slides = slider.children;
-    let index = 0;
+ <script>
+  const slider = document.getElementById('slider');
+  const slides = slider.children;
+  let index = 0;
 
-    function slideRight() {
-      index = (index + 1) % slides.length;
-      updateSlider();
-    }
+  function getSlideWidth() {
+    return window.innerWidth <= 768 ? 100 : 33.33;
+  }
 
-    function slideLeft() {
-      index = (index - 1 + slides.length) % slides.length;
-      updateSlider();
-    }
+  function slideRight() {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  }
 
-    function updateSlider() {
-      slider.style.transform = translateX(-${index * 100}vw);
-    }
+  function slideLeft() {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
 
-    // Swipe для мобильных
-    let startX = 0;
+  function updateSlider() {
+    const slideWidth = getSlideWidth();
+    slider.style.transform = `translateX(-${index * slideWidth}vw)`;
+  }
 
-    slider.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    });
+  // Swipe для мобильных
+  let startX = 0;
 
-    slider.addEventListener('touchend', e => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) slideRight();
-      if (endX - startX > 50) slideLeft();
-    });
-  </script>
+  slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener('touchend', e => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) slideRight();
+    if (endX - startX > 50) slideLeft();
+  });
+
+  // Обновляем при изменении размера окна
+  window.addEventListener('resize', updateSlider);
+</script>
 </body>
 </html>
 </body>
