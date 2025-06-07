@@ -22,18 +22,6 @@
   max-height: 300px; /* Ограничиваем максимальную высоту баннера */
   object-fit: cover; /* Чтобы изображение красиво масштабировалось */
 }
-
-@media screen and (min-width: 768px) {
-  .banner-img {
-    max-height: 300px;
-  }
-
-@media screen and (min-width: 768px) {
-  .slider img {
-    width: 50vw; /* по половине ширины окна для двух фото */
-    height: 300px;
-    object-fit: cover;
-  }
     
 .slider-container {
   position: relative;
@@ -50,13 +38,18 @@
   width: max-content;
   height: 100%;
 }
-
-.slider img {
-  width: 100vw;
-  height: 100%;
-  object-fit: cover;
+      .slider img {
+  width: 50vw; /* По 2 фото на широких экранах */
+  height: auto;
   flex-shrink: 0;
 }
+
+/* Для мобильных — ширина 100% (по одной фотке) */
+@media (max-width: 768px) {
+  .slider img {
+    width: 100vw;
+  }
+
     .arrow {
       position: absolute;
       top: 50%;
@@ -236,22 +229,45 @@
 </footer>
   <!-- Скрипт слайдера -->
   <script>
- let slidesCount = slides.length;
+let slider = document.getElementById('slider');
+let slides = slider.children;
+let slidesCount = slides.length;
 let index = 0;
 
+function getStep() {
+  return window.innerWidth <= 768 ? 1 : 2; // 1 для мобилок, 2 для ПК
+}
+
 function slideRight() {
-  index = (index + 2) % slidesCount;
+  let step = getStep();
+  index = (index + step) % slidesCount;
   updateSlider();
 }
 
 function slideLeft() {
-  index = (index - 2 + slidesCount) % slidesCount;
+  let step = getStep();
+  index = (index - step + slidesCount) % slidesCount;
   updateSlider();
 }
 
 function updateSlider() {
-  slider.style.transform = `translateX(-${index * 50}vw)`; // смещаем на index * 50vw (т.к. фото по 50vw)
+  // Для сдвига учитываем, что каждый слайд занимает либо 100vw (мобильный), либо 50vw (ПК)
+  let slideWidth = window.innerWidth <= 768 ? 100 : 50;
+  slider.style.transform = `translateX(-${index * slideWidth}vw)`;
 }
+
+// Swipe для мобильных
+let startX = 0;
+
+slider.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) slideRight();
+  if (endX - startX > 50) slideLeft();
+});
   </script>
 </body>
 </html>
