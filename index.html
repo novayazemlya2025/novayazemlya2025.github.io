@@ -13,22 +13,68 @@
       color: #333;
       background-color: #fff;
     }
-    header {
-      background-color: #808068;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Новая Земля</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Medium 500', sans-serif;
+      color: #333;
+      background-color: #fff;
     }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5em;
-      margin: 0.2em 0;
+
+    .banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
-    header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5em;
-      margin: 0.2em 0;
+
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
     }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: max-content;
+    }
+
+    .slider img {
+      width: 100vw;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.3);
+      border: none;
+      font-size: 2em;
+      color: #333;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
     .button {
       background-color: #808068;
       color: white;
@@ -41,17 +87,20 @@
       border-radius: 30px;
       display: inline-block;
     }
+
     section {
       padding: 40px 20px;
       max-width: 800px;
       margin: auto;
     }
+
     .cards {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
+
     .card {
       background: #f5f5f5;
       padding: 20px;
@@ -60,12 +109,14 @@
       min-width: 200px;
       max-width: 300px;
     }
+
     footer {
       background-color: #808068;
       color: white;
       text-align: center;
       padding: 20px;
     }
+
     footer a {
       color: white;
       text-decoration: none;
@@ -74,13 +125,32 @@
   </style>
 </head>
 <body>
+  
   <header>
-    <h2>Женщина Нового Времени:</h2>
-    <h2>Искусство осознанных отношений</h2>
+ <!-- Баннер (вместо header) -->
+<div class="banner">
+  <img src="banner.jpg" alt="Баннер" class="banner-img">
+</div>
+
+<!-- Слайдер -->
+<div class="slider-container">
+  <div class="slider" id="slider">
+    <img src="1.jpg" alt="Slide 1">
+    <img src="2.jpg" alt="Slide 2">
+    <img src="3.jpg" alt="Slide 3">
+    <img src="4.jpg" alt="Slide 4">
+    <img src="5.jpg" alt="Slide 5">
+    <img src="6.jpg" alt="Slide 6">
+    <img src="7.jpg" alt="Slide 7">
+    <img src="8.jpg" alt="Slide 8">
+    <!-- Добавь столько, сколько у тебя слайдов -->
+  </div>
+  <button class="arrow left" onclick="slideLeft()">❮</button>
+  <button class="arrow right" onclick="slideRight()">❯</button>
+</div>
   </header>
 
   <section>
-    <img src="cover.jpg" alt="Обложка гайда" style="display: block; margin: 0 auto 20px auto; width: 60%; height: auto; max-width: 600px; border-radius: 8px;" />
     <div style="text-align: center;">
       <a href="https://store-novayazemlya.lemonsqueezy.com/buy/6f2280b8-f84d-4f64-8805-f632da8c2876" class="button">Скачать Гайд</a>
     </div>
@@ -160,5 +230,38 @@
     <a href="terms.html">Условия использования</a>
   </div>
 </footer>
+  <!-- Скрипт слайдера -->
+  <script>
+    let slider = document.getElementById('slider');
+    let slides = slider.children;
+    let index = 0;
+
+    function slideRight() {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    }
+
+    function slideLeft() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${index * 100}vw)`;
+    }
+
+    // Swipe для мобильных
+    let startX = 0;
+
+    slider.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) slideRight();
+      if (endX - startX > 50) slideLeft();
+    });
+  </script>
 </body>
 </html>
