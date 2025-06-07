@@ -12,9 +12,14 @@
       background-color: #fff;
     }
 
-    header {
-      /* Тут остаётся твоя стилизация */
-    }
+  /* Общие стили */
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 300px; /* Ограничиваем максимальную высоту баннера */
+  object-fit: cover; /* Чтобы изображение красиво масштабировалось */
+}
 
     /* Слайдер без вреда для остального */
     .slider-container {
@@ -52,11 +57,11 @@
     .arrow.right { right: 10px; }
 
     /* Более одной картинки на компьютере */
-    @media (min-width: 768px) {
-      .slider img {
-        width: 33.33vw;
-      }
-    }
+@media (min-width: 768px) {
+  .slider img {
+    width: 50vw;
+  }
+}
 
     /* 🚫 Ни один из твоих блоков ниже не изменён */
     .button {
@@ -109,6 +114,12 @@
   </style>
 </head>
 <body>
+
+    <header>
+ <!-- Баннер (вместо header) -->
+<div class="banner">
+  <img src="banner.jpg" alt="Баннер" class="banner-img">
+</div>
 
   <!-- Ты писала: “<div class="slider-container"> ...” -->
   <div class="slider-container">
