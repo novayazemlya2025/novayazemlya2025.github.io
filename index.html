@@ -229,45 +229,38 @@
 </footer>
   <!-- Скрипт слайдера -->
   <script>
-let slider = document.getElementById('slider');
-let slides = slider.children;
-let slidesCount = slides.length;
-let index = 0;
+<script>
+  let slider = document.getElementById('slider');
+  let slides = slider.children;
+  let index = 0;
 
-function getStep() {
-  return window.innerWidth <= 768 ? 1 : 2; // 1 для мобилок, 2 для ПК
-}
+  function slideRight() {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  }
 
-function slideRight() {
-  let step = getStep();
-  index = (index + step) % slidesCount;
-  updateSlider();
-}
+  function slideLeft() {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
 
-function slideLeft() {
-  let step = getStep();
-  index = (index - step + slidesCount) % slidesCount;
-  updateSlider();
-}
+  function updateSlider() {
+    slider.style.transform = `translateX(-${index * 100}vw)`;
+  }
 
-function updateSlider() {
-  // Для сдвига учитываем, что каждый слайд занимает либо 100vw (мобильный), либо 50vw (ПК)
-  let slideWidth = window.innerWidth <= 768 ? 100 : 50;
-  slider.style.transform = `translateX(-${index * slideWidth}vw)`;
-}
+  // Swipe для мобильных
+  let startX = 0;
 
-// Swipe для мобильных
-let startX = 0;
+  slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
 
-slider.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-});
-
-slider.addEventListener('touchend', e => {
-  let endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) slideRight();
-  if (endX - startX > 50) slideLeft();
-});
+  slider.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) slideRight();
+    if (endX - startX > 50) slideLeft();
+  });
+</script>
   </script>
 </body>
 </html>
