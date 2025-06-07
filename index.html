@@ -35,10 +35,20 @@
   transition: transform 0.5s ease;
 }
 
+/* Стили только для изображений в слайдере */
 .slider img {
   width: 100vw;
   height: auto;
   flex-shrink: 0;
+}
+
+/* ... */
+
+/* Компьютеры — по 2 фото */
+@media (min-width: 768px) {
+  .slider img {
+    width: 50vw;
+  }
 }
 
 .arrow {
@@ -112,8 +122,8 @@
     }
   </style>
 </head>
-<body>
   
+<body>
   <header>
  <!-- Баннер (вместо header) -->
 <div class="banner">
@@ -261,5 +271,4 @@
 </script>
 </body>
 </html>
-</body>
-</html>
+
