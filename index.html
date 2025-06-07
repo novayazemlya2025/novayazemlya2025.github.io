@@ -1,18 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Новая Земля</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Medium 500', sans-serif;
-      color: #333;
-      background-color: #fff;
-    }
     <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -37,6 +23,18 @@
   object-fit: cover; /* Чтобы изображение красиво масштабировалось */
 }
 
+@media screen and (min-width: 768px) {
+  .banner-img {
+    max-height: 300px;
+  }
+
+@media screen and (min-width: 768px) {
+  .slider img {
+    width: 50vw; /* по половине ширины окна для двух фото */
+    height: 300px;
+    object-fit: cover;
+  }
+    
 .slider-container {
   position: relative;
   overflow: hidden;
@@ -238,36 +236,22 @@
 </footer>
   <!-- Скрипт слайдера -->
   <script>
-    let slider = document.getElementById('slider');
-    let slides = slider.children;
-    let index = 0;
+ let slidesCount = slides.length;
+let index = 0;
 
-    function slideRight() {
-      index = (index + 1) % slides.length;
-      updateSlider();
-    }
+function slideRight() {
+  index = (index + 2) % slidesCount;
+  updateSlider();
+}
 
-    function slideLeft() {
-      index = (index - 1 + slides.length) % slides.length;
-      updateSlider();
-    }
+function slideLeft() {
+  index = (index - 2 + slidesCount) % slidesCount;
+  updateSlider();
+}
 
-    function updateSlider() {
-      slider.style.transform = `translateX(-${index * 100}vw)`;
-    }
-
-    // Swipe для мобильных
-    let startX = 0;
-
-    slider.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    });
-
-    slider.addEventListener('touchend', e => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) slideRight();
-      if (endX - startX > 50) slideLeft();
-    });
+function updateSlider() {
+  slider.style.transform = `translateX(-${index * 50}vw)`; // смещаем на index * 50vw (т.к. фото по 50vw)
+}
   </script>
 </body>
 </html>
